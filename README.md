@@ -9,7 +9,6 @@
   <h3 align="center">CovTweets-Django</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
     <br />
     <a href="https://github.com/damnation14/CovTweets-Django"><strong>Explore the docs »</strong></a>
     <br />
@@ -35,6 +34,7 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#usage">Installation</a></li>
       </ul>
     </li>
   </ol>

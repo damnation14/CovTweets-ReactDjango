@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<iframe src="{% url 'map' %}" width="75%" height="600"></iframe>
+<div class="row mt-3">
+    {% for covnew in covnews %}
+    <div class="card mb-3" style="max-width: 1000px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img class="imagedet" src={{covnew.urlToImage}} alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{covnew.title}}</h5>
+                    <p class="card-text">{{covnew.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row mt-3 mb-3">
+        {% for charity in charities %}
+        <div class="col-lg-4 col-md-6  ">
+            <div class="card" style="width: 18rem;">
+               
+                <img class="card-img-top image" src={{charity.imageurl}}
+                    alt="Card image cap">
+                
+                <div class="middle">
+                    <a class="btn btn-outline-secondary" role="button" href={{charity.url}}>Donate!</a>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{charity.name}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% if request.user.is_authenticated %}
+<a type="button" class="btn btn-outline-secondary btn-lg btn-block"  role="button" href={% url 'donation-form' %}>Request Donations!</a>
+{% endif %}
+
+    <div class="row mt-3"></div>
+        {% for donation in donations %}
+        <div class="card  w-100 mb-3">
+            <div class="card-header">
+                <h5 class="card-title">{{donation.title}}</h5>
+            </div>
+            <div class="card-body">
+                
+                <p class="card-text">{{donation.description}}</p>
+                <p class="card-text">Bank no: {{donation.Account_no}}</p>
+                <p class="card-text">Phone no: {{donation.Phone_number}}</p>
+                <p class="card-text">Money raised: </p>
+            <div class="w3-light-grey">
+                <div class="w3-container w3-green w3-center" style="width:50%">25%</div>
+            </div><br>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
